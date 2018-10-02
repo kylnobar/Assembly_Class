@@ -1,4 +1,7 @@
-; Syntax translation - GAS
+; Casey Sorrells
+; Syntax translation - GAS to NASM
+; CSCI 273-5867
+
 SECTION .data
 
 SECTION .bss
