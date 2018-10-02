@@ -3,17 +3,18 @@ SECTION .data
 
 SECTION .bss
 letter: resb 1
-r: resd 4
-s: resd 4
-t: resd 4
-x: resw 2
-y: resw 2
+r: resd 1
+s: resd 1
+t: resd 1
+x: resw 1
+y: resw 1
+z: resw 1
 
 SECTION .text
 GLOBAL _main
 _main: 
 
-mov  byte [letter], 077h
+mov  byte [letter], 77h
 mov  dword [r], 5h
 mov  dword [s], 2h
 mov  word [x], ah
@@ -27,13 +28,13 @@ mov  ax, [x]
 sub  ax, [y]
 mov  [z], ax
 
-mov  edx, 00h
+mov  edx, 0h
 mov  eax, [r]
 mov  ecx, [s]
 div  ecx
 mov  [t], eax
 
-mov  edx, 00h
+mov  edx, 0h
 mov  eax, [r]
 mov  ecx, [s]
 div  ecx
@@ -43,5 +44,3 @@ push  dword 0
 sub  esp, 4
 mov  eax, 1
 int 80h
-MISMATCH: ".end"
-
