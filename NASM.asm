@@ -12,35 +12,36 @@ z: resw 1
 
 SECTION .text
 GLOBAL _main
-_main: 
-
-mov  byte [letter], 77h
-mov  dword [r], 5h
 mov  dword [s], 2h
-mov  word [x], ah
-mov  word [y], 4h
+_main:
 
-mov  ax, [x]
-add  ax, [y]
-mov  [z], ax
+mov byte [letter], 77h
+mov dword [r], 5h
+mov dword [s], 2h
+mov word [x], ah
+mov word [y], 4h
 
-mov  ax, [x]
-sub  ax, [y]
-mov  [z], ax
+mov ax, [x]
+add ax, [y]
+mov [z], ax
 
-mov  edx, 0h
-mov  eax, [r]
-mov  ecx, [s]
-div  ecx
-mov  [t], eax
+mov ax, [x]
+sub ax, [y]
+mov [z], ax
 
-mov  edx, 0h
-mov  eax, [r]
-mov  ecx, [s]
-div  ecx
-mov  [t], edx
+mov edx, 0h
+mov eax, [r]
+mov ecx, [s]
+div ecx
+mov [t], eax
 
-push  dword 0
-sub  esp, 4
-mov  eax, 1
+mov edx, 0h
+mov eax, [r]
+mov ecx, [s]
+div ecx
+mov [t], edx
+
+push dword 0
+sub esp, 4
+mov eax, 1
 int 80h
